@@ -10,7 +10,7 @@ docker-compose build && docker-compose up -d && docker-compose scale slave=5
 docker build -t pavanpkulkarni/spark_image_2.0.1:first_image . 
 
 #run the job on the cluster
-docker run --net createsparkcluster210_default -e "SPARK_CLASS=com.pavanpkulkarni.docker.SampleSparkScalaCode" pavanpkulkarni/spark_image_2.0.1:first_image
+docker run --net createandrunsparkjob_default -e "SPARK_CLASS=com.pavanpkulkarni.docker.SampleSparkScalaCode" pavanpkulkarni/spark_image_2.0.1:first_image
 
 #remove the cluster 
 docker-compose down
