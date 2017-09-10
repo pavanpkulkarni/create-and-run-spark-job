@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#pull docker image
+docker pull pavanpkulkarni/spark_image_2.0.1:first_image
+
 #create a 5 node cluster with default configurations 
 docker-compose build && docker-compose up -d && docker-compose scale slave=5
 
