@@ -1,315 +1,71 @@
-2017-03-29 09:40:27,101 [main] INFO  com.walgreens.GQMReports.RunGQMReports$ - Config file : Config(SimpleConfigObject({"email":{"EDW":{"cc":{"recipients":"pavanpraveen.kulkarni@walgreens.com"},"to":{"recipients":"pavanpraveen.kulkarni@walgreens.com"}},"EDW/ODS":{"cc":{"recipients":"pavanpraveen.kulkarni@walgreens.com"},"to":{"recipients":"pavanpraveen.kulkarni@walgreens.com"}},"ODS":{"cc":{"recipients":"pavanpraveen.kulkarni@walgreens.com"},"to":{"recipients":"pavanpraveen.kulkarni@walgreens.com"}},"from":"DigitalData-FailedJobs@walgreens.com","subject":"SPARK :: JOB FAILURE ALERT "},"history":{"endDate":"2017-02-16","isNeeded":"n","startDate":"2017-02-15"},"reports":{"00_FetchAllOrders":"y,EDW/ODS","DP_CODE_DETAIL":"n,ODS","DP_MOBILE_PLU_LOOKUP":"n,ODS","DP_ORDER":"n,ODS","DP_ORDER_BILLING_ADDRESS":"n,ODS","DP_ORDER_IMAGE_SUMMARY":"n,ODS","DP_ORDER_ITEM":"n,ODS","DP_ORDER_ITEM_IMAGE":"n,ODS","DP_ORDER_SHIPPING_ADDRESS":"n,ODS","DP_ORDER_STATUS":"n,ODS","DP_PLU_LOOKUP":"n,ODS","DP_PLU_PRODUCT_LOOKUP":"n,ODS","DP_PROMO_SUMMARY":"n,ODS","DP_SHARED_ORDER":"n,ODS","DP_VENDOR":"n,ODS","DP_ZIP":"n,ODS","MPHEXT001":"y,EDW","MPHEXT011":"y,EDW","PHEXT003":"n,EDW","PHEXT005":"n,EDW","PHEXT006":"n,EDW","PHEXT007":"n,EDW","PHEXT016":"y,EDW","ZIP_EDW":"y,EDW"},"vendorList":{"isNeeded":"n","vendorID":"01,366,343"}}))
-2017-03-29 09:40:27,116 [main] INFO  com.walgreens.GQMReports.RunGQMReports$ - Entering into run() :: com.walgreens.GQMReports.RunGQMReports$
-2017-03-29 09:40:27,116 [main] INFO  com.walgreens.commonUtils.ConnectToSpark$ - Entering into getSparkConf()
-2017-03-29 09:40:27,116 [main] INFO  com.walgreens.commonUtils.ConnectToSpark$ - Entering into getEnvConf()
-2017-03-29 09:40:27,116 [main] INFO  com.walgreens.commonUtils.ConnectToSpark$ - confFileName = application.conf
-2017-03-29 09:40:27,116 [main] INFO  com.walgreens.commonUtils.ConnectToSpark$ - Exiting from getEnvConf()
-2017-03-29 09:40:27,602 [main] INFO  com.walgreens.commonUtils.ConnectToSpark$ - Exiting from getSparkConf()
-2017-03-29 09:40:27,602 [main] INFO  com.walgreens.commonUtils.ConnectToSpark$ - Entering into getEnvConf()
-2017-03-29 09:40:27,602 [main] INFO  com.walgreens.commonUtils.ConnectToSpark$ - confFileName = application.conf
-2017-03-29 09:40:27,602 [main] INFO  com.walgreens.commonUtils.ConnectToSpark$ - Exiting from getEnvConf()
-2017-03-29 09:40:27,602 [main] INFO  com.walgreens.GQMReports.RunGQMReports$ - Report Name : GQMReports
-2017-03-29 09:40:27,602 [main] INFO  com.walgreens.commonUtils.ConnectToSpark$ - Entering into getAppConf() 
-2017-03-29 09:40:27,602 [main] INFO  com.walgreens.commonUtils.ConnectToSpark$ - confFileName = GQMReportsCommonConfig.conf
-2017-03-29 09:40:27,602 [main] INFO  com.walgreens.commonUtils.ConnectToSpark$ - queryConfFileName = GQMReportsQuery.conf
-2017-03-29 09:40:27,633 [main] INFO  com.walgreens.commonUtils.ConnectToSpark$ - Exiting from getAppConf()
-2017-03-29 09:40:32,305 [sparkDriverActorSystem-akka.actor.default-dispatcher-5] INFO  Remoting - Starting remoting
-2017-03-29 09:40:32,665 [sparkDriverActorSystem-akka.actor.default-dispatcher-5] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://sparkDriverActorSystem@10.248.113.5:49727]
-2017-03-29 09:40:35,853 [main] INFO  com.walgreens.GQMReports.RunGQMReports$ - Config file in Start : SimpleConfigObject({"00_FetchAllOrders":"y,EDW/ODS","DP_CODE_DETAIL":"n,ODS","DP_MOBILE_PLU_LOOKUP":"n,ODS","DP_ORDER":"n,ODS","DP_ORDER_BILLING_ADDRESS":"n,ODS","DP_ORDER_IMAGE_SUMMARY":"n,ODS","DP_ORDER_ITEM":"n,ODS","DP_ORDER_ITEM_IMAGE":"n,ODS","DP_ORDER_SHIPPING_ADDRESS":"n,ODS","DP_ORDER_STATUS":"n,ODS","DP_PLU_LOOKUP":"n,ODS","DP_PLU_PRODUCT_LOOKUP":"n,ODS","DP_PROMO_SUMMARY":"n,ODS","DP_SHARED_ORDER":"n,ODS","DP_VENDOR":"n,ODS","DP_ZIP":"n,ODS","MPHEXT001":"y,EDW","MPHEXT011":"y,EDW","PHEXT003":"n,EDW","PHEXT005":"n,EDW","PHEXT006":"n,EDW","PHEXT007":"n,EDW","PHEXT016":"y,EDW","ZIP_EDW":"y,EDW"})
-2017-03-29 09:40:35,854 [main] INFO  com.walgreens.GQMReports.RunGQMReports$ - jobName : 00_FetchAllOrders
-2017-03-29 09:40:35,869 [main] INFO  com.walgreens.GQMReports.RunGQMReports$ - Job Id : local-1490798433962
-2017-03-29 09:40:35,869 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - Entering into onJobStart() :: 00_FetchAllOrders
-2017-03-29 09:40:35,869 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - keyspace : dd_metadata
-2017-03-29 09:40:35,869 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - tableName : spark_job_status
-2017-03-29 09:40:37,751 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - Logging Initial Status for [00_FetchAllOrders] to Cassandra
-2017-03-29 09:40:38,736 [main] WARN  com.datastax.driver.core.NettyUtil - Found Netty's native epoll transport, but not running on linux-based operating system. Using NIO instead.
-2017-03-29 09:40:40,721 [main] INFO  com.datastax.driver.core.Cluster - New Cassandra host qlcavm-azpcc03.walgreens.com/172.17.42.142:9042 added
-2017-03-29 09:40:40,721 [main] INFO  com.datastax.driver.core.Cluster - New Cassandra host qlcavm-azpcc02.walgreens.com/172.17.42.141:9042 added
-2017-03-29 09:40:40,721 [main] INFO  com.datastax.driver.core.Cluster - New Cassandra host qlcavm-azpcc01.walgreens.com/172.17.42.140:9042 added
-2017-03-29 09:40:40,721 [main] INFO  com.datastax.spark.connector.cql.CassandraConnector - Connected to Cassandra cluster: qa_cluster
-2017-03-29 09:40:43,815 [Executor task launch worker-0] INFO  com.datastax.spark.connector.writer.TableWriter - Wrote 1 rows to dd_metadata.spark_job_status in 0.274 s.
-[local-1490798433962,00_FetchAllOrders,2017-03-29 09:40:35.869,2017-03-29 09:40:35.869,0,STARTED,RUNNING,{reports={DP_SHARED_ORDER=n,ODS, DP_PROMO_SUMMARY=n,ODS, MPHEXT001=y,EDW, DP_ORDER_SHIPPING_ADDRESS=n,ODS, MPHEXT011=y,EDW, DP_ORDER=n,ODS, DP_PLU_LOOKUP=n,ODS, DP_ORDER_BILLING_ADDRESS=n,ODS, DP_CODE_DETAIL=n,ODS, 00_FetchAllOrders=y,EDW/ODS, ZIP_EDW=y,EDW, PHEXT005=n,EDW, PHEXT016=y,EDW, DP_PLU_PRODUCT_LOOKUP=n,ODS, PHEXT006=n,EDW, PHEXT007=n,EDW, DP_ZIP=n,ODS, PHEXT003=n,EDW, DP_VENDOR=n,ODS, DP_ORDER_STATUS=n,ODS, DP_ORDER_IMAGE_SUMMARY=n,ODS, DP_ORDER_ITEM=n,ODS, DP_ORDER_ITEM_IMAGE=n,ODS, DP_MOBILE_PLU_LOOKUP=n,ODS}, vendorList={vendorID=01,366,343, isNeeded=n}, history={endDate=2017-02-16, startDate=2017-02-15, isNeeded=n}, email={subject=SPARK :: JOB FAILURE ALERT , EDW={cc={recipients=pavanpraveen.kulkarni@walgreens.com}, to={recipients=pavanpraveen.kulkarni@walgreens.com}}, from=DigitalData-FailedJobs@walgreens.com, ODS={cc={recipients=pavanpraveen.kulkarni@walgreens.com}, to={recipients=pavanpraveen.kulkarni@walgreens.com}}, EDW/ODS={cc={recipients=pavanpraveen.kulkarni@walgreens.com}, to={recipients=pavanpraveen.kulkarni@walgreens.com}}}}]
-2017-03-29 09:40:44,066 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - ()
-+-------------------+-----------------+--------------------+--------------------+--------------+-----------+------------+--------------------+
-|             job_id|         job_name|          start_time|            end_time|execution_time|exit_status|exit_message|   runtime_arguments|
-+-------------------+-----------------+--------------------+--------------------+--------------+-----------+------------+--------------------+
-|local-1490798433962|00_FetchAllOrders|2017-03-29 09:40:...|2017-03-29 09:40:...|             0|    STARTED|     RUNNING|{reports={DP_SHAR...|
-+-------------------+-----------------+--------------------+--------------------+--------------+-----------+------------+--------------------+
-
-2017-03-29 09:40:44,113 [main] INFO  com.walgreens.GQMReports.RunGQMReports$ - Order ==> From Date : 2017-03-28	 Order To Date : 2017-03-29
-2017-03-29 09:40:44,191 [main] INFO  com.walgreens.commonUtils.ExecuteQuery$ - -----------------BEGIN EXECUTING QUERY---------------------
-2017-03-29 09:40:44,191 [main] INFO  com.walgreens.commonUtils.ExecuteQuery$ - Source : Cassandra
-2017-03-29 09:40:44,191 [main] INFO  com.walgreens.commonUtils.ExecuteQuery$ - Query to Execute = select org_id, location_nbr, pcc_migration_cd from poms_om_search.om_location
-2017-03-29 09:40:44,191 [main] INFO  com.walgreens.commonUtils.ExecuteQuery$ - select Statements in Query : org_id, location_nbr, pcc_migration_cd
-2017-03-29 09:40:44,191 [main] INFO  com.walgreens.commonUtils.ExecuteQuery$ - from Statement in Query w/o where clause : poms_om_search.om_location
-2017-03-29 09:40:44,191 [main] INFO  com.walgreens.commonUtils.ExecuteQuery$ - -----------------END EXECUTING QUERY---------------------
-2017-03-29 09:40:44,223 [main] INFO  com.walgreens.GQMReports.FetchOrderTable$ - Generating omOrderAuditRDD 
-2017-03-29 09:40:44,363 [main] INFO  com.walgreens.GQMReports.FetchOrderTable$ - End omOrderAuditRDD 
-2017-03-29 09:40:44,363 [main] INFO  com.walgreens.GQMReports.FetchOrderTable$ - Generating omOrderWithOrderLineDF 
-2017-03-29 09:40:45,707 [main] INFO  com.walgreens.GQMReports.FetchOrderTable$ - Finish Generating omOrderWithOrderLineDF 
-2017-03-29 09:40:45,707 [main] INFO  com.walgreens.GQMReports.FetchOrderTable$ - Start Generating omOrderDF with exploded order_lines 
-2017-03-29 09:40:45,989 [main] INFO  com.walgreens.GQMReports.FetchOrderTable$ - Finish Generating omOrderDF with exploded order_lines 
-2017-03-29 09:40:45,989 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - Entering into onJobEnd() :: 00_FetchAllOrders
-2017-03-29 09:40:45,989 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - keyspace : dd_metadata
-2017-03-29 09:40:45,989 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - tableName : spark_job_status
-2017-03-29 09:40:46,005 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - Logging Final Status of [00_FetchAllOrders] to Cassandra
-2017-03-29 09:40:46,271 [Executor task launch worker-0] INFO  com.datastax.spark.connector.writer.TableWriter - Wrote 1 rows to dd_metadata.spark_job_status in 0.063 s.
-2017-03-29 09:40:46,567 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - Job INstance DF after end : 
-[local-1490798433962,00_FetchAllOrders,2017-03-29 09:40:35.869,2017-03-29 09:40:45.989,10,FINISHED,SUCCESS,{reports={DP_SHARED_ORDER=n,ODS, DP_PROMO_SUMMARY=n,ODS, MPHEXT001=y,EDW, DP_ORDER_SHIPPING_ADDRESS=n,ODS, MPHEXT011=y,EDW, DP_ORDER=n,ODS, DP_PLU_LOOKUP=n,ODS, DP_ORDER_BILLING_ADDRESS=n,ODS, DP_CODE_DETAIL=n,ODS, 00_FetchAllOrders=y,EDW/ODS, ZIP_EDW=y,EDW, PHEXT005=n,EDW, PHEXT016=y,EDW, DP_PLU_PRODUCT_LOOKUP=n,ODS, PHEXT006=n,EDW, PHEXT007=n,EDW, DP_ZIP=n,ODS, PHEXT003=n,EDW, DP_VENDOR=n,ODS, DP_ORDER_STATUS=n,ODS, DP_ORDER_IMAGE_SUMMARY=n,ODS, DP_ORDER_ITEM=n,ODS, DP_ORDER_ITEM_IMAGE=n,ODS, DP_MOBILE_PLU_LOOKUP=n,ODS}, vendorList={vendorID=01,366,343, isNeeded=n}, history={endDate=2017-02-16, startDate=2017-02-15, isNeeded=n}, email={subject=SPARK :: JOB FAILURE ALERT , EDW={cc={recipients=pavanpraveen.kulkarni@walgreens.com}, to={recipients=pavanpraveen.kulkarni@walgreens.com}}, from=DigitalData-FailedJobs@walgreens.com, ODS={cc={recipients=pavanpraveen.kulkarni@walgreens.com}, to={recipients=pavanpraveen.kulkarni@walgreens.com}}, EDW/ODS={cc={recipients=pavanpraveen.kulkarni@walgreens.com}, to={recipients=pavanpraveen.kulkarni@walgreens.com}}}}]
-2017-03-29 09:40:46,583 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - ()
-+-------------------+-----------------+--------------------+--------------------+--------------+-----------+------------+--------------------+
-|             job_id|         job_name|          start_time|            end_time|execution_time|exit_status|exit_message|   runtime_arguments|
-+-------------------+-----------------+--------------------+--------------------+--------------+-----------+------------+--------------------+
-|local-1490798433962|00_FetchAllOrders|2017-03-29 09:40:...|2017-03-29 09:40:...|            10|   FINISHED|     SUCCESS|{reports={DP_SHAR...|
-+-------------------+-----------------+--------------------+--------------------+--------------+-----------+------------+--------------------+
-
-2017-03-29 09:40:46,583 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - Exiting from onJobEnd() :: 00_FetchAllOrders
-2017-03-29 09:40:46,583 [main] INFO  com.walgreens.GQMReports.RunGQMReports$ - jobName : MPHEXT001
-2017-03-29 09:40:46,583 [main] INFO  com.walgreens.GQMReports.RunGQMReports$ - Job Id : local-1490798433962
-2017-03-29 09:40:46,583 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - Entering into onJobStart() :: MPHEXT001
-2017-03-29 09:40:46,599 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - keyspace : dd_metadata
-2017-03-29 09:40:46,599 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - tableName : spark_job_status
-2017-03-29 09:40:46,614 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - Logging Initial Status for [MPHEXT001] to Cassandra
-2017-03-29 09:40:46,880 [Executor task launch worker-0] INFO  com.datastax.spark.connector.writer.TableWriter - Wrote 1 rows to dd_metadata.spark_job_status in 0.068 s.
-[local-1490798433962,MPHEXT001,2017-03-29 09:40:46.583,2017-03-29 09:40:46.583,0,STARTED,RUNNING,{reports={DP_SHARED_ORDER=n,ODS, DP_PROMO_SUMMARY=n,ODS, MPHEXT001=y,EDW, DP_ORDER_SHIPPING_ADDRESS=n,ODS, MPHEXT011=y,EDW, DP_ORDER=n,ODS, DP_PLU_LOOKUP=n,ODS, DP_ORDER_BILLING_ADDRESS=n,ODS, DP_CODE_DETAIL=n,ODS, 00_FetchAllOrders=y,EDW/ODS, ZIP_EDW=y,EDW, PHEXT005=n,EDW, PHEXT016=y,EDW, DP_PLU_PRODUCT_LOOKUP=n,ODS, PHEXT006=n,EDW, PHEXT007=n,EDW, DP_ZIP=n,ODS, PHEXT003=n,EDW, DP_VENDOR=n,ODS, DP_ORDER_STATUS=n,ODS, DP_ORDER_IMAGE_SUMMARY=n,ODS, DP_ORDER_ITEM=n,ODS, DP_ORDER_ITEM_IMAGE=n,ODS, DP_MOBILE_PLU_LOOKUP=n,ODS}, vendorList={vendorID=01,366,343, isNeeded=n}, history={endDate=2017-02-16, startDate=2017-02-15, isNeeded=n}, email={subject=SPARK :: JOB FAILURE ALERT , EDW={cc={recipients=pavanpraveen.kulkarni@walgreens.com}, to={recipients=pavanpraveen.kulkarni@walgreens.com}}, from=DigitalData-FailedJobs@walgreens.com, ODS={cc={recipients=pavanpraveen.kulkarni@walgreens.com}, to={recipients=pavanpraveen.kulkarni@walgreens.com}}, EDW/ODS={cc={recipients=pavanpraveen.kulkarni@walgreens.com}, to={recipients=pavanpraveen.kulkarni@walgreens.com}}}}]
-2017-03-29 09:40:47,024 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - ()
-+-------------------+---------+--------------------+--------------------+--------------+-----------+------------+--------------------+
-|             job_id| job_name|          start_time|            end_time|execution_time|exit_status|exit_message|   runtime_arguments|
-+-------------------+---------+--------------------+--------------------+--------------+-----------+------------+--------------------+
-|local-1490798433962|MPHEXT001|2017-03-29 09:40:...|2017-03-29 09:40:...|             0|    STARTED|     RUNNING|{reports={DP_SHAR...|
-+-------------------+---------+--------------------+--------------------+--------------+-----------+------------+--------------------+
-
-2017-03-29 09:40:47,056 [main] INFO  com.walgreens.commonUtils.ExecuteQuery$ - -----------------BEGIN EXECUTING QUERY---------------------
-2017-03-29 09:40:47,056 [main] INFO  com.walgreens.commonUtils.ExecuteQuery$ - Source : Cassandra
-2017-03-29 09:40:47,056 [main] INFO  com.walgreens.commonUtils.ExecuteQuery$ - Query to Execute = select code_type,detail_cd,detail_cd_desc,end_dttm,create_dttm from poms_om.om_code_decode where code_type = 'STORE_ORDER_STATUS_CODE'
-2017-03-29 09:40:47,056 [main] INFO  com.walgreens.commonUtils.ExecuteQuery$ - select Statements in Query : code_type,detail_cd,detail_cd_desc,end_dttm,create_dttm
-2017-03-29 09:40:47,056 [main] INFO  com.walgreens.commonUtils.ExecuteQuery$ - from Statement in Query  : poms_om.om_code_decode
-2017-03-29 09:40:47,056 [main] INFO  com.walgreens.commonUtils.ExecuteQuery$ - where Statement in Query : code_type = 'STORE_ORDER_STATUS_CODE'
-2017-03-29 09:40:47,056 [main] INFO  com.walgreens.commonUtils.ExecuteQuery$ - -----------------END EXECUTING QUERY---------------------
-2017-03-29 09:40:47,228 [main] INFO  com.walgreens.GQMReports.MPHEXT001_DPCodeDetail$ - ########### Begin [GQM to EDW] MPHEXT001 Job ########### 
-2017-03-29 09:40:47,259 [main] INFO  com.walgreens.commonUtils.SaveFeedFileUtil$ - ------------------------------- INITIALIZING FILE GENERATION -------------------------------
-2017-03-29 09:40:47,806 [main] INFO  com.walgreens.commonUtils.SaveFeedFileUtil$ - Scratch DIrectory for [MPHEXT001_DPCodeDetail$_EDW] job created at ==> \usr\local\ecomm\data\photoomni\feed\digital-data\edw\Scratch_GQM\MPHEXT001_DPCodeDetail$_EDW
-2017-03-29 09:40:48,446 [main] WARN   - Your hostname, EDEV_VC5-227 resolves to a loopback/non-reachable address: fe80:0:0:0:dc3b:2412:df1f:8ddd%eth4, but we couldn't find any external IP address!
-
-[Stage 4:====================>                                   (74 + 1) / 200]
-[Stage 4:========================================>              (147 + 1) / 200]
-[Stage 4:==================================================>    (184 + 1) / 200]
-                                                                                2017-03-29 09:40:51,825 [main] INFO  com.walgreens.commonUtils.SaveFeedFileUtil$ - Wrting into file : V:\usr\local\ecomm\data\photoomni\feed\digital-data\edw\to_zip_gqm\PHEXT001_POMS.dat.20170329094047
-2017-03-29 09:40:51,825 [main] INFO  com.walgreens.commonUtils.SaveFeedFileUtil$ - File Found ==> List(\usr\local\ecomm\data\photoomni\feed\digital-data\edw\Scratch_GQM\MPHEXT001_DPCodeDetail$_EDW\part-r-00000-1a06b2c3-4a18-4785-aed5-0d5f522b51d4)
-2017-03-29 09:40:51,842 [main] INFO  com.walgreens.commonUtils.SaveFeedFileUtil$ - File Renamed and Copied to  ==> /usr/local/ecomm/data/photoomni/feed/digital-data/edw/to_zip_gqm/
-2017-03-29 09:40:51,842 [main] INFO  com.walgreens.commonUtils.SaveFeedFileUtil$ - Finished writing into file : \usr\local\ecomm\data\photoomni\feed\digital-data\edw\to_zip_gqm\PHEXT001_POMS.dat.20170329094047
-2017-03-29 09:40:51,842 [main] INFO  com.walgreens.commonUtils.SaveFeedFileUtil$ - Scratch DIrectory for [MPHEXT001_DPCodeDetail$_EDW] Deleted ==>\usr\local\ecomm\data\photoomni\feed\digital-data\edw\Scratch_GQM\MPHEXT001_DPCodeDetail$_EDW
-2017-03-29 09:40:51,842 [main] INFO  com.walgreens.commonUtils.SaveFeedFileUtil$ - ------------------------------- END FILE GENERATION -------------------------------
-2017-03-29 09:40:51,842 [main] INFO  com.walgreens.GQMReports.MPHEXT001_DPCodeDetail$ - ########### End [GQM to EDW] MPHEXT001 Job ########### 
-2017-03-29 09:40:51,842 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - Entering into onJobEnd() :: MPHEXT001
-2017-03-29 09:40:51,842 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - keyspace : dd_metadata
-2017-03-29 09:40:51,842 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - tableName : spark_job_status
-2017-03-29 09:40:51,857 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - Logging Final Status of [MPHEXT001] to Cassandra
-2017-03-29 09:40:52,139 [Executor task launch worker-0] INFO  com.datastax.spark.connector.writer.TableWriter - Wrote 1 rows to dd_metadata.spark_job_status in 0.066 s.
-2017-03-29 09:40:52,279 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - Job INstance DF after end : 
-[local-1490798433962,MPHEXT001,2017-03-29 09:40:46.583,2017-03-29 09:40:51.842,5,FINISHED,SUCCESS,{reports={DP_SHARED_ORDER=n,ODS, DP_PROMO_SUMMARY=n,ODS, MPHEXT001=y,EDW, DP_ORDER_SHIPPING_ADDRESS=n,ODS, MPHEXT011=y,EDW, DP_ORDER=n,ODS, DP_PLU_LOOKUP=n,ODS, DP_ORDER_BILLING_ADDRESS=n,ODS, DP_CODE_DETAIL=n,ODS, 00_FetchAllOrders=y,EDW/ODS, ZIP_EDW=y,EDW, PHEXT005=n,EDW, PHEXT016=y,EDW, DP_PLU_PRODUCT_LOOKUP=n,ODS, PHEXT006=n,EDW, PHEXT007=n,EDW, DP_ZIP=n,ODS, PHEXT003=n,EDW, DP_VENDOR=n,ODS, DP_ORDER_STATUS=n,ODS, DP_ORDER_IMAGE_SUMMARY=n,ODS, DP_ORDER_ITEM=n,ODS, DP_ORDER_ITEM_IMAGE=n,ODS, DP_MOBILE_PLU_LOOKUP=n,ODS}, vendorList={vendorID=01,366,343, isNeeded=n}, history={endDate=2017-02-16, startDate=2017-02-15, isNeeded=n}, email={subject=SPARK :: JOB FAILURE ALERT , EDW={cc={recipients=pavanpraveen.kulkarni@walgreens.com}, to={recipients=pavanpraveen.kulkarni@walgreens.com}}, from=DigitalData-FailedJobs@walgreens.com, ODS={cc={recipients=pavanpraveen.kulkarni@walgreens.com}, to={recipients=pavanpraveen.kulkarni@walgreens.com}}, EDW/ODS={cc={recipients=pavanpraveen.kulkarni@walgreens.com}, to={recipients=pavanpraveen.kulkarni@walgreens.com}}}}]
-2017-03-29 09:40:52,279 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - ()
-+-------------------+---------+--------------------+--------------------+--------------+-----------+------------+--------------------+
-|             job_id| job_name|          start_time|            end_time|execution_time|exit_status|exit_message|   runtime_arguments|
-+-------------------+---------+--------------------+--------------------+--------------+-----------+------------+--------------------+
-|local-1490798433962|MPHEXT001|2017-03-29 09:40:...|2017-03-29 09:40:...|             5|   FINISHED|     SUCCESS|{reports={DP_SHAR...|
-+-------------------+---------+--------------------+--------------------+--------------+-----------+------------+--------------------+
-
-2017-03-29 09:40:52,295 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - Exiting from onJobEnd() :: MPHEXT001
-2017-03-29 09:40:52,295 [main] INFO  com.walgreens.GQMReports.RunGQMReports$ - jobName : MPHEXT011
-2017-03-29 09:40:52,295 [main] INFO  com.walgreens.GQMReports.RunGQMReports$ - Job Id : local-1490798433962
-2017-03-29 09:40:52,295 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - Entering into onJobStart() :: MPHEXT011
-2017-03-29 09:40:52,295 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - keyspace : dd_metadata
-2017-03-29 09:40:52,295 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - tableName : spark_job_status
-2017-03-29 09:40:52,311 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - Logging Initial Status for [MPHEXT011] to Cassandra
-2017-03-29 09:40:52,545 [Executor task launch worker-0] INFO  com.datastax.spark.connector.writer.TableWriter - Wrote 1 rows to dd_metadata.spark_job_status in 0.063 s.
-[local-1490798433962,MPHEXT011,2017-03-29 09:40:52.295,2017-03-29 09:40:52.295,0,STARTED,RUNNING,{reports={DP_SHARED_ORDER=n,ODS, DP_PROMO_SUMMARY=n,ODS, MPHEXT001=y,EDW, DP_ORDER_SHIPPING_ADDRESS=n,ODS, MPHEXT011=y,EDW, DP_ORDER=n,ODS, DP_PLU_LOOKUP=n,ODS, DP_ORDER_BILLING_ADDRESS=n,ODS, DP_CODE_DETAIL=n,ODS, 00_FetchAllOrders=y,EDW/ODS, ZIP_EDW=y,EDW, PHEXT005=n,EDW, PHEXT016=y,EDW, DP_PLU_PRODUCT_LOOKUP=n,ODS, PHEXT006=n,EDW, PHEXT007=n,EDW, DP_ZIP=n,ODS, PHEXT003=n,EDW, DP_VENDOR=n,ODS, DP_ORDER_STATUS=n,ODS, DP_ORDER_IMAGE_SUMMARY=n,ODS, DP_ORDER_ITEM=n,ODS, DP_ORDER_ITEM_IMAGE=n,ODS, DP_MOBILE_PLU_LOOKUP=n,ODS}, vendorList={vendorID=01,366,343, isNeeded=n}, history={endDate=2017-02-16, startDate=2017-02-15, isNeeded=n}, email={subject=SPARK :: JOB FAILURE ALERT , EDW={cc={recipients=pavanpraveen.kulkarni@walgreens.com}, to={recipients=pavanpraveen.kulkarni@walgreens.com}}, from=DigitalData-FailedJobs@walgreens.com, ODS={cc={recipients=pavanpraveen.kulkarni@walgreens.com}, to={recipients=pavanpraveen.kulkarni@walgreens.com}}, EDW/ODS={cc={recipients=pavanpraveen.kulkarni@walgreens.com}, to={recipients=pavanpraveen.kulkarni@walgreens.com}}}}]
-2017-03-29 09:40:52,670 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - ()
-+-------------------+---------+--------------------+--------------------+--------------+-----------+------------+--------------------+
-|             job_id| job_name|          start_time|            end_time|execution_time|exit_status|exit_message|   runtime_arguments|
-+-------------------+---------+--------------------+--------------------+--------------+-----------+------------+--------------------+
-|local-1490798433962|MPHEXT011|2017-03-29 09:40:...|2017-03-29 09:40:...|             0|    STARTED|     RUNNING|{reports={DP_SHAR...|
-+-------------------+---------+--------------------+--------------------+--------------+-----------+------------+--------------------+
-
-2017-03-29 09:40:52,717 [main] INFO  com.walgreens.commonUtils.ExecuteQuery$ - -----------------BEGIN EXECUTING QUERY---------------------
-2017-03-29 09:40:52,717 [main] INFO  com.walgreens.commonUtils.ExecuteQuery$ - Source : Cassandra
-2017-03-29 09:40:52,717 [main] INFO  com.walgreens.commonUtils.ExecuteQuery$ - Query to Execute = select vendor_id, refund_percentage, description, street_address, city, state, contact_name, phone_nbr, zip_code, cj_subscriber, mobile_affiliate, wag_mobile_affiliate, npt_vendor_cd, boots_affiliate, boots_partner_affiliate, sub_type_cd, credit_card_limit from poms_om.om_vendor
-2017-03-29 09:40:52,717 [main] INFO  com.walgreens.commonUtils.ExecuteQuery$ - select Statements in Query : vendor_id, refund_percentage, description, street_address, city, state, contact_name, phone_nbr, zip_code, cj_subscriber, mobile_affiliate, wag_mobile_affiliate, npt_vendor_cd, boots_affiliate, boots_partner_affiliate, sub_type_cd, credit_card_limit
-2017-03-29 09:40:52,717 [main] INFO  com.walgreens.commonUtils.ExecuteQuery$ - from Statement in Query w/o where clause : poms_om.om_vendor
-2017-03-29 09:40:52,717 [main] INFO  com.walgreens.commonUtils.ExecuteQuery$ - -----------------END EXECUTING QUERY---------------------
-2017-03-29 09:40:52,904 [main] INFO  com.walgreens.GQMReports.MPHEXT011_DPVendor$ - ########### Begin [GQM to EDW] MPHEXT011 Job ########### 
-2017-03-29 09:40:53,019 [main] INFO  com.walgreens.commonUtils.SaveFeedFileUtil$ - ------------------------------- INITIALIZING FILE GENERATION -------------------------------
-2017-03-29 09:40:53,065 [main] INFO  com.walgreens.commonUtils.SaveFeedFileUtil$ - Scratch DIrectory for [MPHEXT011_DPVendor$_EDW] job created at ==> \usr\local\ecomm\data\photoomni\feed\digital-data\edw\Scratch_GQM\MPHEXT011_DPVendor$_EDW
+..
+Google
 
 
-[Stage 8:>                                                          (0 + 1) / 3]
-[Stage 8:===================>                                       (1 + 1) / 3]
-[Stage 8:=======================================>                   (2 + 1) / 3]
-                                                                                2017-03-29 09:41:00,339 [main] INFO  com.walgreens.commonUtils.SaveFeedFileUtil$ - Wrting into file : V:\usr\local\ecomm\data\photoomni\feed\digital-data\edw\to_zip_gqm\PHEXT011_POMS.dat.20170329094053
-2017-03-29 09:41:00,339 [main] INFO  com.walgreens.commonUtils.SaveFeedFileUtil$ - File Found ==> List(\usr\local\ecomm\data\photoomni\feed\digital-data\edw\Scratch_GQM\MPHEXT011_DPVendor$_EDW\part-r-00000-5e3c955b-f467-4c47-be3a-e185348f7fa2)
-2017-03-29 09:41:00,339 [main] INFO  com.walgreens.commonUtils.SaveFeedFileUtil$ - File Renamed and Copied to  ==> /usr/local/ecomm/data/photoomni/feed/digital-data/edw/to_zip_gqm/
-2017-03-29 09:41:00,339 [main] INFO  com.walgreens.commonUtils.SaveFeedFileUtil$ - Finished writing into file : \usr\local\ecomm\data\photoomni\feed\digital-data\edw\to_zip_gqm\PHEXT011_POMS.dat.20170329094053
-2017-03-29 09:41:00,339 [main] INFO  com.walgreens.commonUtils.SaveFeedFileUtil$ - Scratch DIrectory for [MPHEXT011_DPVendor$_EDW] Deleted ==>\usr\local\ecomm\data\photoomni\feed\digital-data\edw\Scratch_GQM\MPHEXT011_DPVendor$_EDW
-2017-03-29 09:41:00,339 [main] INFO  com.walgreens.commonUtils.SaveFeedFileUtil$ - ------------------------------- END FILE GENERATION -------------------------------
-2017-03-29 09:41:00,339 [main] INFO  com.walgreens.GQMReports.MPHEXT011_DPVendor$ - ########### End [GQM to EDW] MPHEXT011 Job ########### 
-2017-03-29 09:41:00,339 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - Entering into onJobEnd() :: MPHEXT011
-2017-03-29 09:41:00,339 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - keyspace : dd_metadata
-2017-03-29 09:41:00,339 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - tableName : spark_job_status
-2017-03-29 09:41:00,349 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - Logging Final Status of [MPHEXT011] to Cassandra
-2017-03-29 09:41:00,571 [Executor task launch worker-0] INFO  com.datastax.spark.connector.writer.TableWriter - Wrote 1 rows to dd_metadata.spark_job_status in 0.062 s.
-2017-03-29 09:41:00,712 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - Job INstance DF after end : 
-[local-1490798433962,MPHEXT011,2017-03-29 09:40:52.295,2017-03-29 09:41:00.339,8,FINISHED,SUCCESS,{reports={DP_SHARED_ORDER=n,ODS, DP_PROMO_SUMMARY=n,ODS, MPHEXT001=y,EDW, DP_ORDER_SHIPPING_ADDRESS=n,ODS, MPHEXT011=y,EDW, DP_ORDER=n,ODS, DP_PLU_LOOKUP=n,ODS, DP_ORDER_BILLING_ADDRESS=n,ODS, DP_CODE_DETAIL=n,ODS, 00_FetchAllOrders=y,EDW/ODS, ZIP_EDW=y,EDW, PHEXT005=n,EDW, PHEXT016=y,EDW, DP_PLU_PRODUCT_LOOKUP=n,ODS, PHEXT006=n,EDW, PHEXT007=n,EDW, DP_ZIP=n,ODS, PHEXT003=n,EDW, DP_VENDOR=n,ODS, DP_ORDER_STATUS=n,ODS, DP_ORDER_IMAGE_SUMMARY=n,ODS, DP_ORDER_ITEM=n,ODS, DP_ORDER_ITEM_IMAGE=n,ODS, DP_MOBILE_PLU_LOOKUP=n,ODS}, vendorList={vendorID=01,366,343, isNeeded=n}, history={endDate=2017-02-16, startDate=2017-02-15, isNeeded=n}, email={subject=SPARK :: JOB FAILURE ALERT , EDW={cc={recipients=pavanpraveen.kulkarni@walgreens.com}, to={recipients=pavanpraveen.kulkarni@walgreens.com}}, from=DigitalData-FailedJobs@walgreens.com, ODS={cc={recipients=pavanpraveen.kulkarni@walgreens.com}, to={recipients=pavanpraveen.kulkarni@walgreens.com}}, EDW/ODS={cc={recipients=pavanpraveen.kulkarni@walgreens.com}, to={recipients=pavanpraveen.kulkarni@walgreens.com}}}}]
-2017-03-29 09:41:00,712 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - ()
-+-------------------+---------+--------------------+--------------------+--------------+-----------+------------+--------------------+
-|             job_id| job_name|          start_time|            end_time|execution_time|exit_status|exit_message|   runtime_arguments|
-+-------------------+---------+--------------------+--------------------+--------------+-----------+------------+--------------------+
-|local-1490798433962|MPHEXT011|2017-03-29 09:40:...|2017-03-29 09:41:...|             8|   FINISHED|     SUCCESS|{reports={DP_SHAR...|
-+-------------------+---------+--------------------+--------------------+--------------+-----------+------------+--------------------+
-
-2017-03-29 09:41:00,712 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - Exiting from onJobEnd() :: MPHEXT011
-2017-03-29 09:41:00,712 [main] INFO  com.walgreens.GQMReports.RunGQMReports$ - jobName : PHEXT016
-2017-03-29 09:41:00,712 [main] INFO  com.walgreens.GQMReports.RunGQMReports$ - Job Id : local-1490798433962
-2017-03-29 09:41:00,712 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - Entering into onJobStart() :: PHEXT016
-2017-03-29 09:41:00,712 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - keyspace : dd_metadata
-2017-03-29 09:41:00,712 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - tableName : spark_job_status
-2017-03-29 09:41:00,727 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - Logging Initial Status for [PHEXT016] to Cassandra
-2017-03-29 09:41:00,962 [Executor task launch worker-0] INFO  com.datastax.spark.connector.writer.TableWriter - Wrote 1 rows to dd_metadata.spark_job_status in 0.061 s.
-[local-1490798433962,PHEXT016,2017-03-29 09:41:00.712,2017-03-29 09:41:00.712,0,STARTED,RUNNING,{reports={DP_SHARED_ORDER=n,ODS, DP_PROMO_SUMMARY=n,ODS, MPHEXT001=y,EDW, DP_ORDER_SHIPPING_ADDRESS=n,ODS, MPHEXT011=y,EDW, DP_ORDER=n,ODS, DP_PLU_LOOKUP=n,ODS, DP_ORDER_BILLING_ADDRESS=n,ODS, DP_CODE_DETAIL=n,ODS, 00_FetchAllOrders=y,EDW/ODS, ZIP_EDW=y,EDW, PHEXT005=n,EDW, PHEXT016=y,EDW, DP_PLU_PRODUCT_LOOKUP=n,ODS, PHEXT006=n,EDW, PHEXT007=n,EDW, DP_ZIP=n,ODS, PHEXT003=n,EDW, DP_VENDOR=n,ODS, DP_ORDER_STATUS=n,ODS, DP_ORDER_IMAGE_SUMMARY=n,ODS, DP_ORDER_ITEM=n,ODS, DP_ORDER_ITEM_IMAGE=n,ODS, DP_MOBILE_PLU_LOOKUP=n,ODS}, vendorList={vendorID=01,366,343, isNeeded=n}, history={endDate=2017-02-16, startDate=2017-02-15, isNeeded=n}, email={subject=SPARK :: JOB FAILURE ALERT , EDW={cc={recipients=pavanpraveen.kulkarni@walgreens.com}, to={recipients=pavanpraveen.kulkarni@walgreens.com}}, from=DigitalData-FailedJobs@walgreens.com, ODS={cc={recipients=pavanpraveen.kulkarni@walgreens.com}, to={recipients=pavanpraveen.kulkarni@walgreens.com}}, EDW/ODS={cc={recipients=pavanpraveen.kulkarni@walgreens.com}, to={recipients=pavanpraveen.kulkarni@walgreens.com}}}}]
-2017-03-29 09:41:01,102 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - ()
-+-------------------+--------+--------------------+--------------------+--------------+-----------+------------+--------------------+
-|             job_id|job_name|          start_time|            end_time|execution_time|exit_status|exit_message|   runtime_arguments|
-+-------------------+--------+--------------------+--------------------+--------------+-----------+------------+--------------------+
-|local-1490798433962|PHEXT016|2017-03-29 09:41:...|2017-03-29 09:41:...|             0|    STARTED|     RUNNING|{reports={DP_SHAR...|
-+-------------------+--------+--------------------+--------------------+--------------+-----------+------------+--------------------+
-
-2017-03-29 09:41:01,227 [main] INFO  com.walgreens.GQMReports.PHEXT016_OrderItems$ - ########### Begin [GQM to EDW] PHEXT016 Job ########### 
-2017-03-29 09:41:01,868 [main] INFO  com.walgreens.commonUtils.SaveFeedFileUtil$ - ------------------------------- INITIALIZING FILE GENERATION -------------------------------
-2017-03-29 09:41:01,884 [main] INFO  com.walgreens.commonUtils.SaveFeedFileUtil$ - Scratch DIrectory for [PHEXT016_OrderItems$_EDW] job created at ==> \usr\local\ecomm\data\photoomni\feed\digital-data\edw\Scratch_GQM\PHEXT016_OrderItems$_EDW
+some randome google search
 
 
-[Stage 12:>                                                         (0 + 1) / 3]
-[Stage 12:>                                                         (0 + 1) / 3]
-[Stage 12:>                                                         (0 + 1) / 3]
-[Stage 12:>                                                         (0 + 1) / 3]
-[Stage 12:>                                                         (0 + 1) / 3]
-[Stage 12:>                                                         (0 + 1) / 3]
-[Stage 12:>                                                         (0 + 1) / 3]
-[Stage 12:===================>                                      (1 + 1) / 3]
-[Stage 12:===================>                                      (1 + 1) / 3]
-[Stage 12:===================>                                      (1 + 1) / 3]
-[Stage 12:===================>                                      (1 + 1) / 3]
-[Stage 12:===================>                                      (1 + 1) / 3]
-[Stage 12:===================>                                      (1 + 1) / 3]
-[Stage 12:======================================>                   (2 + 1) / 3]
-[Stage 12:======================================>                   (2 + 1) / 3]
-[Stage 12:======================================>                   (2 + 1) / 3]
-[Stage 12:======================================>                   (2 + 1) / 3]
-[Stage 13:================>                                      (61 + 1) / 200]
-[Stage 13:======================>                                (81 + 1) / 200]
-[Stage 13:===========================>                          (101 + 1) / 200]
-[Stage 13:===============================>                      (117 + 1) / 200]
-[Stage 13:===================================>                  (132 + 1) / 200]
-[Stage 13:=========================================>            (154 + 1) / 200]
-[Stage 13:================================================>     (179 + 1) / 200]
-                                                                                2017-03-29 09:56:03,104 [main] INFO  com.walgreens.commonUtils.SaveFeedFileUtil$ - Wrting into file : V:\usr\local\ecomm\data\photoomni\feed\digital-data\edw\to_zip_gqm\PHEXT016_POMS.dat.20170329094101
-2017-03-29 09:56:03,104 [main] INFO  com.walgreens.commonUtils.SaveFeedFileUtil$ - File Found ==> List(\usr\local\ecomm\data\photoomni\feed\digital-data\edw\Scratch_GQM\PHEXT016_OrderItems$_EDW\part-r-00000-e5429795-c7c6-4db4-9c2f-5384c29c17b3)
-2017-03-29 09:56:03,104 [main] INFO  com.walgreens.commonUtils.SaveFeedFileUtil$ - File Renamed and Copied to  ==> /usr/local/ecomm/data/photoomni/feed/digital-data/edw/to_zip_gqm/
-2017-03-29 09:56:03,104 [main] INFO  com.walgreens.commonUtils.SaveFeedFileUtil$ - Finished writing into file : \usr\local\ecomm\data\photoomni\feed\digital-data\edw\to_zip_gqm\PHEXT016_POMS.dat.20170329094101
-2017-03-29 09:56:03,104 [main] INFO  com.walgreens.commonUtils.SaveFeedFileUtil$ - Scratch DIrectory for [PHEXT016_OrderItems$_EDW] Deleted ==>\usr\local\ecomm\data\photoomni\feed\digital-data\edw\Scratch_GQM\PHEXT016_OrderItems$_EDW
-2017-03-29 09:56:03,104 [main] INFO  com.walgreens.commonUtils.SaveFeedFileUtil$ - ------------------------------- END FILE GENERATION -------------------------------
-2017-03-29 09:56:03,104 [main] INFO  com.walgreens.GQMReports.PHEXT016_OrderItems$ - ########### End [GQM to EDW] PHEXT016 Job ########### 
-2017-03-29 09:56:03,104 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - Entering into onJobEnd() :: PHEXT016
-2017-03-29 09:56:03,104 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - keyspace : dd_metadata
-2017-03-29 09:56:03,104 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - tableName : spark_job_status
-2017-03-29 09:56:03,112 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - Logging Final Status of [PHEXT016] to Cassandra
-2017-03-29 09:56:03,333 [Executor task launch worker-2] INFO  com.datastax.spark.connector.writer.TableWriter - Wrote 1 rows to dd_metadata.spark_job_status in 0.063 s.
-2017-03-29 09:56:03,458 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - Job INstance DF after end : 
-[local-1490798433962,PHEXT016,2017-03-29 09:41:00.712,2017-03-29 09:56:03.104,902,FINISHED,SUCCESS,{reports={DP_SHARED_ORDER=n,ODS, DP_PROMO_SUMMARY=n,ODS, MPHEXT001=y,EDW, DP_ORDER_SHIPPING_ADDRESS=n,ODS, MPHEXT011=y,EDW, DP_ORDER=n,ODS, DP_PLU_LOOKUP=n,ODS, DP_ORDER_BILLING_ADDRESS=n,ODS, DP_CODE_DETAIL=n,ODS, 00_FetchAllOrders=y,EDW/ODS, ZIP_EDW=y,EDW, PHEXT005=n,EDW, PHEXT016=y,EDW, DP_PLU_PRODUCT_LOOKUP=n,ODS, PHEXT006=n,EDW, PHEXT007=n,EDW, DP_ZIP=n,ODS, PHEXT003=n,EDW, DP_VENDOR=n,ODS, DP_ORDER_STATUS=n,ODS, DP_ORDER_IMAGE_SUMMARY=n,ODS, DP_ORDER_ITEM=n,ODS, DP_ORDER_ITEM_IMAGE=n,ODS, DP_MOBILE_PLU_LOOKUP=n,ODS}, vendorList={vendorID=01,366,343, isNeeded=n}, history={endDate=2017-02-16, startDate=2017-02-15, isNeeded=n}, email={subject=SPARK :: JOB FAILURE ALERT , EDW={cc={recipients=pavanpraveen.kulkarni@walgreens.com}, to={recipients=pavanpraveen.kulkarni@walgreens.com}}, from=DigitalData-FailedJobs@walgreens.com, ODS={cc={recipients=pavanpraveen.kulkarni@walgreens.com}, to={recipients=pavanpraveen.kulkarni@walgreens.com}}, EDW/ODS={cc={recipients=pavanpraveen.kulkarni@walgreens.com}, to={recipients=pavanpraveen.kulkarni@walgreens.com}}}}]
-2017-03-29 09:56:03,458 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - ()
-+-------------------+--------+--------------------+--------------------+--------------+-----------+------------+--------------------+
-|             job_id|job_name|          start_time|            end_time|execution_time|exit_status|exit_message|   runtime_arguments|
-+-------------------+--------+--------------------+--------------------+--------------+-----------+------------+--------------------+
-|local-1490798433962|PHEXT016|2017-03-29 09:41:...|2017-03-29 09:56:...|           902|   FINISHED|     SUCCESS|{reports={DP_SHAR...|
-+-------------------+--------+--------------------+--------------------+--------------+-----------+------------+--------------------+
+AllImagesVideosNewsMapsMore
+SettingsTools
+About 130,000,000 results (0.74 seconds) 
+Showing results for some random google search
+Search instead for some randome google search
 
-2017-03-29 09:56:03,458 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - Exiting from onJobEnd() :: PHEXT016
-2017-03-29 09:56:03,458 [main] INFO  com.walgreens.GQMReports.RunGQMReports$ - jobName : ZIP_EDW
-2017-03-29 09:56:03,458 [main] INFO  com.walgreens.GQMReports.RunGQMReports$ - Job Id : local-1490798433962
-2017-03-29 09:56:03,458 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - Entering into onJobStart() :: ZIP_EDW
-2017-03-29 09:56:03,458 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - keyspace : dd_metadata
-2017-03-29 09:56:03,458 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - tableName : spark_job_status
-2017-03-29 09:56:03,474 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - Logging Initial Status for [ZIP_EDW] to Cassandra
-2017-03-29 09:56:03,677 [Executor task launch worker-2] INFO  com.datastax.spark.connector.writer.TableWriter - Wrote 1 rows to dd_metadata.spark_job_status in 0.059 s.
-[local-1490798433962,ZIP_EDW,2017-03-29 09:56:03.458,2017-03-29 09:56:03.458,0,STARTED,RUNNING,{reports={DP_SHARED_ORDER=n,ODS, DP_PROMO_SUMMARY=n,ODS, MPHEXT001=y,EDW, DP_ORDER_SHIPPING_ADDRESS=n,ODS, MPHEXT011=y,EDW, DP_ORDER=n,ODS, DP_PLU_LOOKUP=n,ODS, DP_ORDER_BILLING_ADDRESS=n,ODS, DP_CODE_DETAIL=n,ODS, 00_FetchAllOrders=y,EDW/ODS, ZIP_EDW=y,EDW, PHEXT005=n,EDW, PHEXT016=y,EDW, DP_PLU_PRODUCT_LOOKUP=n,ODS, PHEXT006=n,EDW, PHEXT007=n,EDW, DP_ZIP=n,ODS, PHEXT003=n,EDW, DP_VENDOR=n,ODS, DP_ORDER_STATUS=n,ODS, DP_ORDER_IMAGE_SUMMARY=n,ODS, DP_ORDER_ITEM=n,ODS, DP_ORDER_ITEM_IMAGE=n,ODS, DP_MOBILE_PLU_LOOKUP=n,ODS}, vendorList={vendorID=01,366,343, isNeeded=n}, history={endDate=2017-02-16, startDate=2017-02-15, isNeeded=n}, email={subject=SPARK :: JOB FAILURE ALERT , EDW={cc={recipients=pavanpraveen.kulkarni@walgreens.com}, to={recipients=pavanpraveen.kulkarni@walgreens.com}}, from=DigitalData-FailedJobs@walgreens.com, ODS={cc={recipients=pavanpraveen.kulkarni@walgreens.com}, to={recipients=pavanpraveen.kulkarni@walgreens.com}}, EDW/ODS={cc={recipients=pavanpraveen.kulkarni@walgreens.com}, to={recipients=pavanpraveen.kulkarni@walgreens.com}}}}]
-2017-03-29 09:56:03,802 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - ()
-+-------------------+--------+--------------------+--------------------+--------------+-----------+------------+--------------------+
-|             job_id|job_name|          start_time|            end_time|execution_time|exit_status|exit_message|   runtime_arguments|
-+-------------------+--------+--------------------+--------------------+--------------+-----------+------------+--------------------+
-|local-1490798433962| ZIP_EDW|2017-03-29 09:56:...|2017-03-29 09:56:...|             0|    STARTED|     RUNNING|{reports={DP_SHAR...|
-+-------------------+--------+--------------------+--------------------+--------------+-----------+------------+--------------------+
-
-2017-03-29 09:56:03,802 [main] INFO  com.walgreens.GQMReports.RunGQMReports$ - List of all [EDW] Jobs Successfully Executed : List(PHEXT016, MPHEXT011, MPHEXT001)
-2017-03-29 09:56:03,833 [main] INFO  com.walgreens.commonUtils.ZipFilesUtil$ - ------------------------------- INITIALIZED ZIPPING -------------------------------
-2017-03-29 09:56:03,833 [main] INFO  com.walgreens.commonUtils.ZipFilesUtil$ - Source to Zip Files: /usr/local/ecomm/data/photoomni/feed/digital-data/edw/to_zip_gqm/
-2017-03-29 09:56:03,833 [main] INFO  com.walgreens.commonUtils.ZipFilesUtil$ - Destination of Zipped Files : /usr/local/ecomm/data/photoomni/feed/digital-data/edw/outbound_gqm/POMS_EDW_GQM_20170329095603.zip
-2017-03-29 09:56:03,849 [main] INFO  com.walgreens.commonUtils.ZipFilesUtil$ - Following File will be Zipped => 
-V:\usr\local\ecomm\data\photoomni\feed\digital-data\edw\to_zip_gqm\PHEXT001_POMS.dat.20170328021804
-V:\usr\local\ecomm\data\photoomni\feed\digital-data\edw\to_zip_gqm\PHEXT001_POMS.dat.20170328042035
-V:\usr\local\ecomm\data\photoomni\feed\digital-data\edw\to_zip_gqm\PHEXT001_POMS.dat.20170328081700
-V:\usr\local\ecomm\data\photoomni\feed\digital-data\edw\to_zip_gqm\PHEXT001_POMS.dat.20170328082934
-V:\usr\local\ecomm\data\photoomni\feed\digital-data\edw\to_zip_gqm\PHEXT001_POMS.dat.20170329094047
-V:\usr\local\ecomm\data\photoomni\feed\digital-data\edw\to_zip_gqm\PHEXT011_POMS.dat.20170328042039
-V:\usr\local\ecomm\data\photoomni\feed\digital-data\edw\to_zip_gqm\PHEXT011_POMS.dat.20170328081704
-V:\usr\local\ecomm\data\photoomni\feed\digital-data\edw\to_zip_gqm\PHEXT011_POMS.dat.20170328082936
-V:\usr\local\ecomm\data\photoomni\feed\digital-data\edw\to_zip_gqm\PHEXT011_POMS.dat.20170329094053
-V:\usr\local\ecomm\data\photoomni\feed\digital-data\edw\to_zip_gqm\PHEXT016_POMS.dat.20170329094101
-2017-03-29 09:56:03,880 [main] INFO  com.walgreens.commonUtils.ZipFilesUtil$ - Adding File :  V:\usr\local\ecomm\data\photoomni\feed\digital-data\edw\to_zip_gqm\PHEXT001_POMS.dat.20170328021804
-2017-03-29 09:56:03,880 [main] INFO  com.walgreens.commonUtils.ZipFilesUtil$ - Adding File :  V:\usr\local\ecomm\data\photoomni\feed\digital-data\edw\to_zip_gqm\PHEXT001_POMS.dat.20170328042035
-2017-03-29 09:56:03,880 [main] INFO  com.walgreens.commonUtils.ZipFilesUtil$ - Adding File :  V:\usr\local\ecomm\data\photoomni\feed\digital-data\edw\to_zip_gqm\PHEXT001_POMS.dat.20170328081700
-2017-03-29 09:56:03,880 [main] INFO  com.walgreens.commonUtils.ZipFilesUtil$ - Adding File :  V:\usr\local\ecomm\data\photoomni\feed\digital-data\edw\to_zip_gqm\PHEXT001_POMS.dat.20170328082934
-2017-03-29 09:56:03,896 [main] INFO  com.walgreens.commonUtils.ZipFilesUtil$ - Adding File :  V:\usr\local\ecomm\data\photoomni\feed\digital-data\edw\to_zip_gqm\PHEXT001_POMS.dat.20170329094047
-2017-03-29 09:56:03,896 [main] INFO  com.walgreens.commonUtils.ZipFilesUtil$ - Adding File :  V:\usr\local\ecomm\data\photoomni\feed\digital-data\edw\to_zip_gqm\PHEXT011_POMS.dat.20170328042039
-2017-03-29 09:56:03,958 [main] INFO  com.walgreens.commonUtils.ZipFilesUtil$ - Adding File :  V:\usr\local\ecomm\data\photoomni\feed\digital-data\edw\to_zip_gqm\PHEXT011_POMS.dat.20170328081704
-2017-03-29 09:56:04,005 [main] INFO  com.walgreens.commonUtils.ZipFilesUtil$ - Adding File :  V:\usr\local\ecomm\data\photoomni\feed\digital-data\edw\to_zip_gqm\PHEXT011_POMS.dat.20170328082936
-2017-03-29 09:56:04,052 [main] INFO  com.walgreens.commonUtils.ZipFilesUtil$ - Adding File :  V:\usr\local\ecomm\data\photoomni\feed\digital-data\edw\to_zip_gqm\PHEXT011_POMS.dat.20170329094053
-2017-03-29 09:56:04,068 [main] INFO  com.walgreens.commonUtils.ZipFilesUtil$ - Adding File :  V:\usr\local\ecomm\data\photoomni\feed\digital-data\edw\to_zip_gqm\PHEXT016_POMS.dat.20170329094101
-2017-03-29 09:56:04,083 [main] INFO  com.walgreens.commonUtils.ZipFilesUtil$ - ------------------------------- COMPLETED ZIPPING -------------------------------
-2017-03-29 09:56:04,083 [main] INFO  com.walgreens.GQMReports.RunGQMReports$ - Created Trigger File at => /usr/local/ecomm/data/photoomni/feed/digital-data/edw/outbound_gqm/POMS_EDW_GQM_20170329095603.zip
-2017-03-29 09:56:04,083 [main] INFO  com.walgreens.GQMReports.RunGQMReports$ - Unable to delete file: \usr\local\ecomm\data\photoomni\feed\digital-data\edw\to_zip_gqm\PHEXT016_POMS.dat.20170329094101 :: null
-2017-03-29 09:56:04,083 [main] ERROR com.walgreens.GQMReports.RunGQMReports$ - Exception occured 
-java.io.IOException: Unable to delete file: \usr\local\ecomm\data\photoomni\feed\digital-data\edw\to_zip_gqm\PHEXT016_POMS.dat.20170329094101
-	at org.apache.commons.io.FileUtils.forceDelete(FileUtils.java:2279)
-	at org.apache.commons.io.FileUtils.cleanDirectory(FileUtils.java:1653)
-	at org.apache.commons.io.FileUtils.deleteDirectory(FileUtils.java:1535)
-	at com.walgreens.commonUtils.SaveFeedFileUtil$.DeleteDirectory(saveFeedFileUtil.scala:165)
-	at com.walgreens.GQMReports.RunGQMReports$.execute(RunGQMReports.scala:256)
-	at com.walgreens.commonUtils.Start$class.run(Start.scala:84)
-	at com.walgreens.GQMReports.RunGQMReports$.run(RunGQMReports.scala:32)
-	at com.walgreens.GQMReports.RunGQMReports$.main(RunGQMReports.scala:49)
-	at com.walgreens.GQMReports.RunGQMReports.main(RunGQMReports.scala)
-2017-03-29 09:56:04,083 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - Entering into onJobEnd() :: ZIP_EDW
-2017-03-29 09:56:04,083 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - keyspace : dd_metadata
-2017-03-29 09:56:04,083 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - tableName : spark_job_status
-2017-03-29 09:56:04,099 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - Logging Final Status of [ZIP_EDW] to Cassandra
-2017-03-29 09:56:04,302 [Executor task launch worker-2] INFO  com.datastax.spark.connector.writer.TableWriter - Wrote 1 rows to dd_metadata.spark_job_status in 0.060 s.
-2017-03-29 09:56:04,412 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - to  = pavanpraveen.kulkarni@walgreens.com
-2017-03-29 09:56:04,412 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - cc  = pavanpraveen.kulkarni@walgreens.com
-2017-03-29 09:56:04,412 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - bcc = 
-2017-03-29 09:56:04,412 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - subject = [ Local ] SPARK :: JOB FAILURE ALERT  ==> Job Name : ZIP_EDW Job ID : local-1490798433962
-2017-03-29 09:56:04,412 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - smtpHost = javasmtp.walgreens.com
-2017-03-29 09:56:04,412 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - smtpPort = 25
-2017-03-29 09:56:04,584 [main] INFO  com.walgreens.commonUtils.SendMailUtil$ - Sending Email..
-2017-03-29 09:56:05,225 [main] INFO  com.walgreens.commonUtils.SendMailUtil$ - Email Sent ... !
-2017-03-29 09:56:05,225 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - Job INstance DF after end : 
-[local-1490798433962,ZIP_EDW,2017-03-29 09:56:03.458,2017-03-29 09:56:04.083,0,FAILED,Unable to delete file: \usr\local\ecomm\data\photoomni\feed\digital-data\edw\to_zip_gqm\PHEXT016_POMS.dat.20170329094101 :: null,{reports={DP_SHARED_ORDER=n,ODS, DP_PROMO_SUMMARY=n,ODS, MPHEXT001=y,EDW, DP_ORDER_SHIPPING_ADDRESS=n,ODS, MPHEXT011=y,EDW, DP_ORDER=n,ODS, DP_PLU_LOOKUP=n,ODS, DP_ORDER_BILLING_ADDRESS=n,ODS, DP_CODE_DETAIL=n,ODS, 00_FetchAllOrders=y,EDW/ODS, ZIP_EDW=y,EDW, PHEXT005=n,EDW, PHEXT016=y,EDW, DP_PLU_PRODUCT_LOOKUP=n,ODS, PHEXT006=n,EDW, PHEXT007=n,EDW, DP_ZIP=n,ODS, PHEXT003=n,EDW, DP_VENDOR=n,ODS, DP_ORDER_STATUS=n,ODS, DP_ORDER_IMAGE_SUMMARY=n,ODS, DP_ORDER_ITEM=n,ODS, DP_ORDER_ITEM_IMAGE=n,ODS, DP_MOBILE_PLU_LOOKUP=n,ODS}, vendorList={vendorID=01,366,343, isNeeded=n}, history={endDate=2017-02-16, startDate=2017-02-15, isNeeded=n}, email={subject=SPARK :: JOB FAILURE ALERT , EDW={cc={recipients=pavanpraveen.kulkarni@walgreens.com}, to={recipients=pavanpraveen.kulkarni@walgreens.com}}, from=DigitalData-FailedJobs@walgreens.com, ODS={cc={recipients=pavanpraveen.kulkarni@walgreens.com}, to={recipients=pavanpraveen.kulkarni@walgreens.com}}, EDW/ODS={cc={recipients=pavanpraveen.kulkarni@walgreens.com}, to={recipients=pavanpraveen.kulkarni@walgreens.com}}}}]
-2017-03-29 09:56:05,241 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - ()
-+-------------------+--------+--------------------+--------------------+--------------+-----------+--------------------+--------------------+
-|             job_id|job_name|          start_time|            end_time|execution_time|exit_status|        exit_message|   runtime_arguments|
-+-------------------+--------+--------------------+--------------------+--------------+-----------+--------------------+--------------------+
-|local-1490798433962| ZIP_EDW|2017-03-29 09:56:...|2017-03-29 09:56:...|             0|     FAILED|Unable to delete ...|{reports={DP_SHAR...|
-+-------------------+--------+--------------------+--------------------+--------------+-----------+--------------------+--------------------+
-
-2017-03-29 09:56:05,241 [main] INFO  com.walgreens.commonUtils.MonitorJobsUtil$ - Exiting from onJobEnd() :: ZIP_EDW
-2017-03-29 09:56:05,241 [main] INFO  com.walgreens.GQMReports.RunGQMReports$ - Exiting from run() :: com.walgreens.GQMReports.RunGQMReports$
-2017-03-29 09:56:11,709 [pool-19-thread-1] INFO  com.datastax.spark.connector.cql.CassandraConnector - Disconnected from Cassandra cluster: qa_cluster
-
+Search Results
+The Most Insane Search Suggestions Ever Seen On Google ...
+https://www.someecards.com › Love › Reminders
+Nov 9, 2011 - We probably shouldn't be surprised by anything people Google at this point, considering we all rely on it for everything short of brushing our teeth for us. But these search suggestions are almost as insane as using Bing. ... © Copyright 2017 Someecards, Inc.
+15 Random Google Searches & What We Learned From Them
+www.makeuseof.com/tag/random-google-searches-learned/
+Dec 3, 2014 - By dissecting 15 completely random Google searches, perhaps we'll all ... we would take a quick look at some utterly random Google searches.
+29 Awesome Things You Didn't Know About Google (But Should ...
+www.huffingtonpost.com/2014/02/03/google-search-facts_n_4697542.html
+Feb 3, 2014 - When you advance to the next level, Google will perform a random search, using those images as bricks. 3. Find more about a certain picture ...
+The 24 most hilarious Google search suggestions ever, the #3 killed ...
+justsomething.co/the-24-most-hilarious-google-search-suggestions-ever-the-3-killed-...
+There is no doubt Google search suggestions are very useful, but since many people use Google to find the weirdest things, if you pay attention to some of the ...
+random google search thing - pgl@yoyo.org
+https://pgl.yoyo.org/random/
+your random google search query is: http://www.google.com/search?q=bird+ ... fun doesn't stop there: check out some of the things people have been searching ...
+Mangle Random Link Generator
+www.mangle.ca/
+Randomly sends you to one of over 2 billion links and web pages on the internet using a word database. ... Powered by the Google Web API. ... This update adds some search engines to the list, compatibility for Firefox 2.0 and fixes the bugs ...
+24 WTF Funny Google Search Suggestions | SMOSH
+www.smosh.com/smosh-pit/photos/24-wtf-google-search-suggestions
+Apr 19, 2013 - The funniest, craziest, and most WTF Google Search Suggestions ever!
+Top 10 Strangest Things People Search for on Google - TechEBlog
+www.techeblog.com/index.php/.../top-10-strangest-things-people-search-for-on-goog...
+Nov 10, 2012 - If you're using Google to ask how to use the search engine, ... still does not explain why some people think that rhinos are actually obese unicorns. ... to take on the job of photoshopping spermatozoa onto random images.
+20 Inexplicably Funny Google Search Result Suggestions - ThumbPress
+thumbpress.com/20-inexplicably-funny-google-search-result-suggestions/
+20 Inexplicably Funny Google Search Result Suggestions |
+Images for some random google search
+Image result for some random google search
+Image result for some random google search
+Image result for some random google search
+Image result for some random google search
+Image result for some random google search
+More images for some random google search
+Report images
+Searches related to some random google search
+random things to google when bored
+random google search engine
+random google search generator
+how to do a random google search
+google random generator
+google random page
+random google image search
+google random site
+1	
+2
+3
+4
+5
+6
+7
+8
+9
+10
+Next
+60090, Wheeling, IL - From your phone (Location History) - Use precise location - Learn more
+Help Send feedback Privacy Terms
