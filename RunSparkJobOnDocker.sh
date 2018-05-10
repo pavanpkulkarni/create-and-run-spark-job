@@ -33,6 +33,9 @@ printf "  Check status of nodes running 'docker ps -a'        \n"   >>$LogFile 2
 printf "+----------------------------------------------------+\n"   >>$LogFile 2>&1
 printf "\n" >>$LogFile 2>&1
 
+printf "\n wait for 10 seconds before executing the Spark Job .........  \n\n" >>$LogFile 2>&1
+sleep 10
+
 #run the job on the cluster
 printf "+----------------------------------------------------------+\n" >>$LogFile 2>&1
 printf "  Executing Spark job on %s node cluster \n" "$number_of_nodes" >>$LogFile 2>&1
