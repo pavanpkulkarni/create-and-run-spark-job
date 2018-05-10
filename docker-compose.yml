@@ -1,4 +1,4 @@
-version: '1'
+version: '3'
 
 ###############################################################################
 #DOCKER-COMPOSE 
@@ -14,16 +14,39 @@ version: '1'
 services:
   master:
     build: .
-    image: pavanpkulkarni/spark_image_2.0.1:first_image
+    image: img_221
     container_name: master
     ports:
-      - "8080:8080"
+      - 4040:4040
+      - 7077:7077
+      - 8080:8080
+      - 6066:6066
     command: ["/usr/bin/supervisord", "--configuration=/opt/conf/master.conf"]
+ 
 #---------------------------------------
 # SLAVE CONFIGURATION 
 #---------------------------------------
   slave:
-    image: pavanpkulkarni/spark_image_2.0.1:first_image
+    image: img_221
     depends_on:
       - master
+    ports:
+      - "8081"
     command: ["/usr/bin/supervisord", "--configuration=/opt/conf/slave.conf"]
+    volumes:
+        - ./docker-volume/spark-output/:/opt/output
+        - ./docker-volume/spark-events/:/opt/spark-events
+
+#---------------------------------------
+# HISTORY SERVER CONFIGURATION 
+#---------------------------------------
+  history-server:
+      image: img_221
+      container_name: history-server
+      depends_on:
+        - master
+      ports:
+        - "18080:18080"
+      command: ["/usr/bin/supervisord", "--configuration=/opt/conf/history-server.conf"]
+      volumes:
+        - ./docker-volume/spark-events:/opt/spark-events
