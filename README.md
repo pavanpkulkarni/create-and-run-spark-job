@@ -14,7 +14,7 @@ This repository contains all the required files to create a n-node spark cluster
 1.  Pull the Spark image from [docker-hub](https://hub.docker.com/r/pavanpkulkarni/spark_image/). Tag : 2.2.1
 2.  Build and Create a n-node cluster. Here I'm creating a 3-node cluster. This can be changed by specifying `docker-compose up -d --scale slave=$number_of_nodes`
 3. Wait for 10 seconds so that Docker fully establishes the network connections. 
-4.  Run the job on the cluster. You can either pull this [Source Code](https://github.com/pavanpkulkarni/Spark_WordCount_Gradle) and build with Gradle or try something of your own.
+4.  Run the job on the cluster. You can either pull this [Source Code](https://github.com/pavanpkulkarni/Docker_WordCount_Spark) and build with Gradle or try something of your own.
 5.  Optional - after successful completion of job, bring down the cluster by running `docker-compose down`.
 
 ### Spark UI:
